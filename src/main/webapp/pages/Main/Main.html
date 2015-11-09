@@ -1,11 +1,44 @@
-<wm-page data-ng-controller="MainPageController" name="mainpage" pagetitle="Main">
-    <wm-header content="header" name="header" height="auto"></wm-header>
-    <wm-top-nav name="topnav" content="topnav"></wm-top-nav>
-    <wm-content name="content">
-        <wm-left-panel columnwidth="2" name="leftpanel" content="leftnav"></wm-left-panel>
-        <wm-page-content columnwidth="8" paddingleft="15" paddingright="15" name="mainContent">
+<wm-page name="page1" data-ng-controller="MainPageController" pagetitle="Main">
+    <wm-header content="header" name="header1"></wm-header>
+    <wm-content name="content1">
+        <wm-page-content name="page_content1" columnwidth="12">
+            <wm-livefilter name="livefilter1" dataset="bind:Variables.HrdbEmployeeData.dataSet">
+                <wm-layoutgrid name="layoutgrid6">
+                    <wm-gridrow name="gridrow64">
+                        <wm-gridcolumn name="gridcolumn59" show="show" columnwidth="12">
+                            <wm-filter-field type="integer" placeholder="Enter value" widget="text" multiple="false" readonly="false" required="false" show="true" generator="identity" primary-key="false" is-related="false" key="eid" display-name="Eid" step="1"
+                            filter-on="eid" is-range="false" field="eid"></wm-filter-field>
+                        </wm-gridcolumn>
+                    </wm-gridrow>
+                    <wm-gridrow name="gridrow65">
+                        <wm-gridcolumn name="gridcolumn60" show="show" columnwidth="12">
+                            <wm-filter-field type="string" placeholder="Enter value" widget="text" multiple="false" readonly="false" required="false" show="true" generator="assigned" primary-key="false" is-related="false" key="firstname" display-name="Firstname"
+                            filter-on="firstname" is-range="false" field="firstname"></wm-filter-field>
+                        </wm-gridcolumn>
+                    </wm-gridrow>
+                    <wm-gridrow name="gridrow66">
+                        <wm-gridcolumn name="gridcolumn61" show="show" columnwidth="12">
+                            <wm-filter-field type="string" placeholder="Enter value" widget="text" multiple="false" readonly="false" required="false" show="true" generator="assigned" primary-key="false" is-related="false" key="lastname" display-name="Lastname"
+                            filter-on="lastname" is-range="false" field="lastname"></wm-filter-field>
+                        </wm-gridcolumn>
+                    </wm-gridrow>
+                </wm-layoutgrid>
+                <wm-filter-action class="btn-primary" action="filter()" show="true" iconname="filter" key="filter" display-name="Filter"></wm-filter-action>
+                <wm-filter-action class="btn" action="clearFilter()" show="true" iconname="clear" key="clear" display-name="Clear"></wm-filter-action>
+            </wm-livefilter>
+            <wm-grid name="grid3" dataset="bind:Widgets.livefilter1.result" readonlygrid="true" gridsearch="false">
+                <wm-grid-column type="integer" readonly="true" caption="Eid" generator="identity" mobileDisplay="true" pcDisplay="true" primary-key="true" binding="eid"></wm-grid-column>
+                <wm-grid-column type="string" readonly="false" caption="Firstname" generator="assigned" mobileDisplay="true" pcDisplay="true" binding="firstname"></wm-grid-column>
+                <wm-grid-column type="string" readonly="false" caption="Lastname" generator="assigned" mobileDisplay="true" pcDisplay="true" binding="lastname"></wm-grid-column>
+                <wm-grid-column type="string" readonly="false" caption="Street" generator="assigned" mobileDisplay="true" pcDisplay="true" binding="street"></wm-grid-column>
+                <wm-grid-column type="string" readonly="false" caption="City" generator="assigned" mobileDisplay="true" pcDisplay="true" binding="city"></wm-grid-column>
+                <wm-grid-column type="string" readonly="false" caption="State" generator="assigned" mobileDisplay="true" pcDisplay="true" binding="state"></wm-grid-column>
+                <wm-grid-column type="string" readonly="false" caption="Zip" generator="assigned" mobileDisplay="true" pcDisplay="true" binding="zip"></wm-grid-column>
+                <wm-grid-column type="date" readonly="false" caption="Birthdate" generator="assigned" datepattern="yyyy-MM-dd" mobileDisplay="true" pcDisplay="true" binding="birthdate" formatpattern="toDate"></wm-grid-column>
+                <wm-grid-column type="string" readonly="false" caption="Picurl" generator="assigned" mobileDisplay="true" pcDisplay="true" binding="picurl"></wm-grid-column>
+                <wm-grid-column type="string" readonly="false" caption="Jobtitle" generator="assigned" mobileDisplay="true" pcDisplay="true" binding="jobtitle"></wm-grid-column>
+            </wm-grid>
         </wm-page-content>
-        <wm-right-panel columnwidth="2" name="rightpanel" content="rightnav"></wm-right-panel>
     </wm-content>
-    <wm-footer name="footer" content="footer"></wm-footer>
+    <wm-footer content="footer" name="footer1"></wm-footer>
 </wm-page>
